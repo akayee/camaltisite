@@ -42,8 +42,8 @@ const TopHeader = props => {
     const classes = useStyles();
 
     return <div>
-        <Row style={{ height: "10%" }} >
-            <Col xs="4" style={{ justifyContent: "center", alignItems: "center", display: "flex" }}>
+        <Row style={{ height: "10%",justifyContent: "center", alignItems: "center" }} >
+            <Col xs="4" >
                 <img src={Logo} alt="Logo" />
             </Col>
             <Col xs="6" style={{ margin: "2%" }}>
@@ -63,11 +63,12 @@ const TopHeader = props => {
                 </div>
 
             </Col>
-            <Col style={{ top:"20px",paddingRight:"4%" }}>
+            <Col >
                 
             <IconButton aria-label="delete">
                     <AccountCircleTwoToneIcon style={{ color: lightGreen[900] }} />
                 </IconButton>
+                
                 <IconButton aria-label="delete">
                     <ShoppingCartTwoToneIcon style={{ color: lightGreen[900] }} />
                 </IconButton>
