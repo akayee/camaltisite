@@ -1,33 +1,56 @@
 
 import React from 'react';
 import { Card, CardActionArea, CardActions, CardContent, CardMedia, IconButton, Typography } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles ,useTheme  } from '@material-ui/core/styles';
 import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
 import Discount from './Discount';
 import { Row, Col,Button } from 'reactstrap';
 import { lightGreen,red } from '@material-ui/core/colors';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
     root: {
-        maxWidth: 345,
+      display: 'flex',
     },
-});
+    details: {
+      display: 'flex',
+      flexDirection: 'column',
+    },
+    content: {
+      flex: '1 0 auto',
+    },
+    cover: {
+      width: 151,
+    },
+    controls: {
+      display: 'flex',
+      alignItems: 'center',
+      paddingLeft: theme.spacing(1),
+      paddingBottom: theme.spacing(1),
+    },
+    playIcon: {
+      height: 38,
+      width: 38,
+    },
+    price:{
+        textDecorationLine: "line-through",
+        color: red[900],display: "inline-block",
+        padding:"5px",
+        fontSize:"16px"
+    }
+  }));
 
-const Product = props => {
+const PrefferedProduct = props => {
     const classes = useStyles();
+    const theme = useTheme();
 
-
-    return <Card >
-         <CardActionArea>
+    return <Card className={classes.root}>
+       
+        <div className={classes.details}>
+        <CardActionArea>
         {props.item.discount && <Discount item={props.item} />}
-        <CardMedia
-            className={classes.media}
-            imageUrl={props.item.url}
-        >
-            <img style={{ height: "250px",width:"auto", overflow: "hidden" }} src={props.item.url} />
-        </CardMedia>
-
-        <CardContent stlye={{ height: "30%" }}>
+        
+   
+        <CardContent className={classes.content}>
 
             <Typography gutterBottom variant="h5" component="h2">
                 {props.item.title}
@@ -36,7 +59,7 @@ const Product = props => {
             <div>
             <Col> {props.item.discount ? <div> 
                    
-                <p style={{ textDecorationLine: "line-through",color: red[900],display: "inline-block",padding:"5px",fontSize:"16px"}}>{props.item.price} ₺</p>
+                <p className={classes.price}>{props.item.price} ₺</p>
                 <p style={{ color: lightGreen[900],display: "inline-block",fontSize:"20px",fontWeight:"bold" }}> {props.item.price - (props.item.price / props.item.discount)} ₺</p>
                 </div> : <p style={{ color: lightGreen[900],fontSize:"20px",fontWeight:"bold"  }}>{props.item.price} ₺</p>}</Col>
             </div>
@@ -56,9 +79,18 @@ const Product = props => {
            </CardActions>
             
         </CardContent>
+       
         </CardActionArea>
+        </div>
+
+        <CardMedia
+             className={classes.cover}
+        >
+            <img style={{ height: "250px",width:"auto", overflow: "hidden" }} src={props.item.url} />
+        </CardMedia>
+       
 
     </Card>
 }
 
-export default Product;
+export default PrefferedProduct;

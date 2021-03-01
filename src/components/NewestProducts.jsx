@@ -26,8 +26,12 @@ const responsive = {
 
 const NewestProducts = props =>{
 
-    return <div> 
-        <h3>En Yeniler</h3>
+    return <div style={{marginTop:"3%"}}> 
+        <h3>En Yeniler
+        
+        </h3>
+        
+        
         <Carousel  
              additionalTransfrom={0}
              arrows

@@ -12,7 +12,7 @@ const useStyles = makeStyles({
 const BestCategory = props => {
     const classes = useStyles();
     var items = props.items;
-    return <Row>
+    return <Row style={{marginTop:"3%"}}>
         {items.map((item, i) => <Col md={3} xs={6}><Card style={{borderRadius:0}} > 
             <CardActionArea>
                 <CardMedia
