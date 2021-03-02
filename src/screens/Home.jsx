@@ -1,9 +1,10 @@
-import React from 'react';
+import React , {useEffect} from 'react';
 import Banner from '../components/Banner';
 import BestCategory from '../components/BestCategory';
 import DailySales from '../components/DailySales';
 import MostPreferred from '../components/MostPreffered';
 import NewestProducts from '../components/NewestProducts';
+import ProductDetail from './ProductDetail';
 import ProductList from './ProductList';
 
 
@@ -107,59 +108,29 @@ const Home = props => {
 
     const tezgah = [{
         url: "https://image.freepik.com/free-photo/high-angle-shot-homemade-simits-chopping-board-white-surface_181624-21981.jpg",
-        title: "Simit"
+        title: "Simit",
+        price: 2
     },
     {
         url: "https://image.freepik.com/free-photo/woman-s-hand-is-holding-white-cup-hot-milky-beverage-with-cinnamon-called-turkish-salep-sahlep-background-rippling-water-misty-maiden-s-tower-distance-istanbul_152904-7789.jpg",
-        title: "Sahlep"
+        title: "Sahlep",
+        price: 8
     },
     {
         url: "http://t3.gstatic.com/licensed-image?q=tbn:ANd9GcRCqSF6ocMHkS7Ql7U5bsOvgOr2Mu1xPuVRW9ouBmZ_RYKbM1Ode9bd92Vtqi1PH1W_nNhw8x6FB6pHX2px9es",
-        title: "Kestane Şekeri"
+        title: "Kestane Şekeri",
+        price: 40
     },
     {
         url: "https://www.pastasipariset.com/Upload/1253-Renkli-Arabalar-Dogum-Gunu-Pastasi_20191205_n.jpg",
-        title: "Özel Pasta"
+        title: "Özel Pasta",
+        price: 60
     },
     ]
 
-    const categories = [{
-        id: 0,
-        title: "Pastalar",
-        subCategories: [
-            { id: 1, title: "Tüm Pasta" },
-            { id: 2, title: "Tekli Pasta" },
-            { id: 3, title: "Çocuk Pastası" },
-            { id: 4, title: "Özel Gün Pastası" }]
-    },
-    {
-        id: 1, title: "Çikolata"
-    },
-    {
-        id: 2,
-        title: "Tatlı/Tuzlu",
-        subCategories: [
-            { id: 21, title: "Tatlı" },
-            { id: 22, title: "Tuzlu" }
-        ]
-    },
-    {
-        id: 3,
-        title: "Baklava"
-    },
-    {
-        id: 4,
-        title: "Sütlü Tatlılar"
-    },
-    {
-        id: 5,
-        title: "İçecekler",
-        subCategories: [
-            { id: 51, title: "Sıcaklar" },
-            { id: 52, title: "Soğuklar" }
-        ]
-    }
-    ]
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    });
 
     return <div style={{ flex: 1 }}>
         <Banner items={items} />
@@ -167,7 +138,6 @@ const Home = props => {
         <DailySales items={tezgah} />
         <NewestProducts items={products} />
         <MostPreferred items={products} />
-        <ProductList categories={categories} />
     </div>
 }
 

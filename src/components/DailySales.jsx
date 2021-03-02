@@ -1,26 +1,24 @@
 import React from 'react';
 import Carousel from 'react-multi-carousel';
-import Product from './Product'
+import Product from './Product';
+import StorefrontIcon from '@material-ui/icons/Storefront';
+import { lightGreen } from '@material-ui/core/colors';
 import "react-multi-carousel/lib/styles.css";
 
 const DailySales = props => {
 
 
-    return <div style={{marginTop:"3%"}}>
-        <h3>Tezgahımız</h3>
+    return <div style={{marginTop:"2%"}}>
+        <h3 style={{display:"flex",justifyContent:"center",alignItems:"center",fontSize:40}}><StorefrontIcon  style={{fontSize:40,color: lightGreen[900]}}/> Tezgahımız</h3> 
         <Carousel
             additionalTransfrom={0}
             arrows
             autoPlay
             autoPlaySpeed={5000}
             centerMode={false}
-            className=""
-            containerClass="container-with-dots"
-            dotListClass=""
             draggable
             focusOnSelect={false}
             infinite
-            itemClass=""
             keyBoardControl
             minimumTouchDrag={80}
             renderButtonGroupOutside={false}
@@ -52,7 +50,6 @@ const DailySales = props => {
                 }
             }}
             showDots={false}
-            sliderClass=""
             slidesToSlide={2}
             swipeable
         >

@@ -10,17 +10,14 @@ import IconButton from '@material-ui/core/IconButton';
 
 const MostPreferred = props => {
 
-    return <Row style={{backgroundColor: lightGreen[900],padding:"3%",margin:"3%"}}>
+    return <Row style={{backgroundColor: lightGreen[900],padding:"3%",margin:"3%",display:"flex",justifyContent:"center",alignItems:"center",textAlign:"center"}}>
         <Col xs={3}>
-            <div style={{display:"flex",justifyContent:"center",alignItems:"center",height:"100%"}}>
+            <div style={{height:"100%"}}>
                 <h3 style={{color:"white"}}>En Çok Satanlar</h3>
                 <IconButton disabled>
                     <HistoryOutlinedIcon   style={{ color: "#FFFAFA",fontSize: 80 }} />
             </IconButton>
-            </div>
-            
-            
-            
+            </div>   
         </Col>
         <Col xs={9} >         
             <Carousel

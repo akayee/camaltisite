@@ -32,8 +32,8 @@ const Header = (props) => {
                     <NavbarBrand href="/">Tüm Kategoriler</NavbarBrand>
                     <NavbarToggler onClick={toggle} />
                     <Collapse isOpen={isOpen} navbar>
-                        <Nav className="ml-auto" style={{ justifyContent: "flex-end",paddingLeft:"5%" }} navbar>
-                        <UncontrolledDropdown nav inNavbar>
+                        <Nav className="ml-auto" style={{ justifyContent: "flex-end",paddingLeft:"5%",fontSize:"20px",fontWeight:"bold",marginLeft:"3em",marginRight:"1em" }} navbar>
+                        <UncontrolledDropdown nav inNavbar style={{marginLeft:"2em",marginRight:"2em"}}>
                                 <DropdownToggle nav caret>
                                     Pastalar
                                 </DropdownToggle>
@@ -55,13 +55,13 @@ const Header = (props) => {
                                     </DropdownItem>
                                 </DropdownMenu>
                             </UncontrolledDropdown>
-                            <NavItem>
+                            <NavItem style={{marginLeft:"2em",marginRight:"2em"}}>
                                 <NavLink href="#">Çikolata</NavLink>
                             </NavItem>
-                            <NavItem>
+                            <NavItem style={{marginLeft:"2em",marginRight:"2em"}}>
                                 <NavLink href="#">Kuru Pasta</NavLink>
                             </NavItem>
-                            <NavItem>
+                            <NavItem style={{marginLeft:"2em",marginRight:"2em"}}>
                                 <NavLink href="#">Hediyelik</NavLink>
                             </NavItem>                            
                         </Nav>

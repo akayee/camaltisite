@@ -34,6 +34,17 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
+    },
+    inputRoot:{
+        textAlign:"center",
+        paddingLeft:"10%"
+    },
+    iconGroup:{
+        display:"flex",
+        justifyContent:"flex-end"
+    },
+    fontset:{
+        fontSize:20
     }
 }))
 
@@ -41,19 +52,18 @@ const TopHeader = props => {
 
     const classes = useStyles();
 
-    return <div>
-        <Row style={{ height: "10%",justifyContent: "center", alignItems: "center" }} >
-            <Col xs="4" >
+    return <div >
+        <Row style={{ height: "10%",display:"flex",justifyContent: "center", alignItems: "center" }} >
+            <Col xs="3" style={{display:"flex",justifyContent:"center",alignItems:"center"}} >
                 <img src={Logo} alt="Logo" />
             </Col>
-            <Col xs="6" style={{ margin: "2%" }}>
-                <div className={classes.search} style={{ border: '2px solid #244f2c', maxWidth: "70%", borderColor: lightGreen[900] }}>
+            <Col xs="5" style={{ margin: "2%" }}>
+                <div className={classes.search} style={{ border: '2px solid #244f2c', borderColor: lightGreen[900] }}>
                     <div className={classes.searchIcon}>
                         <SearchIcon style={{ color: lightGreen[900] }} />
                     </div>
                     <InputBase
                         placeholder="Site İçinde Arama Yap"
-
                         classes={{
                             root: classes.inputRoot,
                             input: classes.inputInput,
@@ -63,14 +73,14 @@ const TopHeader = props => {
                 </div>
 
             </Col>
-            <Col >
+            <Col xs="3" className={classes.iconGroup}>
                 
-            <IconButton aria-label="delete">
-                    <AccountCircleTwoToneIcon style={{ color: lightGreen[900] }} />
+            <IconButton aria-label="delete" >
+                    <AccountCircleTwoToneIcon style={{ color: lightGreen[900],fontSize:35 }}  />
                 </IconButton>
                 
                 <IconButton aria-label="delete">
-                    <ShoppingCartTwoToneIcon style={{ color: lightGreen[900] }} />
+                    <ShoppingCartTwoToneIcon style={{ color: lightGreen[900],fontSize:35 }} />
                 </IconButton>
 
             </Col>

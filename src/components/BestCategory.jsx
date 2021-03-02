@@ -6,14 +6,23 @@ import { Row, Col } from 'reactstrap';
 
 const useStyles = makeStyles({
     root: {
-        maxWidth: 345,
+        maxWidth: 370,
+        textAlign:"center"
+    }, 
+    media: {
+        height: "70%",
     },
+    center:{
+        display:"flex",
+        alignItems:"center",
+        justifyContent:"center"
+    }
 });
 const BestCategory = props => {
     const classes = useStyles();
     var items = props.items;
-    return <Row style={{marginTop:"3%"}}>
-        {items.map((item, i) => <Col md={3} xs={6}><Card style={{borderRadius:0}} > 
+    return <Row style={{marginTop:"3%",paddingLeft:"2%"}}>
+        {items.map((item, i) => <Col md={3} xs={6}><Card className={classes.root} > 
             <CardActionArea>
                 <CardMedia
                     className={classes.media}
