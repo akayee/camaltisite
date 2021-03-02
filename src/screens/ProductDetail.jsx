@@ -47,10 +47,10 @@ const ProductDetail = props => {
     const product = props.location.state.item;
     return <div className={classes.root}>
         <Row >
-            <Col xs="5">
+            <Col md="5" xs="12">
                 <img className={classes.img} src={product.url} />
             </Col>
-            <Col xs="4">
+            <Col md="4" xs="12">
                 <h3>{product.title}</h3>
                 <p>{product.description} </p>
                 {product.discount ? <div>
@@ -59,7 +59,7 @@ const ProductDetail = props => {
                     <p className={classes.price} > {product.price - (product.price / product.discount)} ₺</p>
                 </div> : <p className={classes.price}>{product.price} ₺</p>}
             </Col>
-            <Col xs="3">
+            <Col md="3" xs="12">
                 <Row>
                     <Col xs="12">
                         <h4>Adres</h4>
