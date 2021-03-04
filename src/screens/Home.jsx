@@ -4,6 +4,7 @@ import BestCategory from '../components/BestCategory';
 import DailySales from '../components/DailySales';
 import MostPreferred from '../components/MostPreffered';
 import NewestProducts from '../components/NewestProducts';
+import Cart from './Cart';
 import ProductDetail from './ProductDetail';
 import ProductList from './ProductList';
 
@@ -138,6 +139,7 @@ const Home = props => {
         <DailySales items={tezgah} />
         <NewestProducts items={products} />
         <MostPreferred items={products} />
+        <Cart />
     </div>
 }
 
